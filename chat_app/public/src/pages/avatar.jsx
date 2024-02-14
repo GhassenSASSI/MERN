@@ -56,7 +56,7 @@ const Avatar = () => {
             const image = await axios.get(
                 `${api}/${Math.round(Math.random() * 1000)}`
             )
-            const buffer = new Buffer(image.data)
+            const buffer = Buffer.from(image.data)
             data.push(buffer.toString("base64"))
         }
         setAvatars(data)
